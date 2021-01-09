@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<!-- this need to be inside the the html page to use external fonts -->
+<svg width="200" height="200" viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- points serão os pontos de formação do triangulo -->
+    <polygon id="trianglePolygon" fill="none" stroke="#fff" stroke-width="1" points="16,1 32,32 1,32" />
+    <text id="loadingText" x="0" y="42" fill="white">Loading...</text>
+    <style>
+        
+        /* stroke-dasharray é o tamanho do tracejado */
+        /* stroke-dashoffset é o deslocamento do tracejado */
+        #trianglePolygon{
+            stroke-dasharray: 18;
+            stroke-dashoffset: 1;
+            animation: dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+        }
+        @keyframes dash{
+            /* to > significa de 0% começando tudo zerado até o 100% */
+            to{
+                stroke-dashoffset: 144;
+            }
+        }
+        #loadingText{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6px;
+            letter-spacing: .4px;
+            animation: blick 1.25s ease-in-out infinite;
+        }
+        @keyframes blick{
+            /* na metade do tempo o elemento tera opacidade 0 */
+            50%{
+                opacity: 0;
+            }
+        }
+    </style>
+</svg>
+    
+<style>
+    body {
+        background:rgb(12, 12, 12);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height: 100vh;
+    }
+</style>
+</body>
+</html>
